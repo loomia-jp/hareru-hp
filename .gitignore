@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Claude Code (local session settings)
+.claude/settings.local.json
+
+# Node / build (future-proofing)
+node_modules/
+.cache/
+dist/
+.env
+.env.local
