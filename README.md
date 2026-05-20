@@ -32,11 +32,4 @@ GitHub に push → Vercel が自動で再デプロイ。
 
 ## お問い合わせフォーム
 
-`index.html` のお問い合わせフォームは [Formspree](https://formspree.io) を利用します。
-公開前に一度だけ次の設定が必要です：
-
-1. https://formspree.io で無料アカウントを作成
-2. フォームを作成し、エンドポイント URL を発行（例: `https://formspree.io/f/xxxxxxxx`）
-3. `index.html` 内の `action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"` を、発行された URL に差し替え
-
-差し替えるまでフォーム送信は有効になりません（送信時はエラー表示になり、電話番号への連絡を案内します）。
+`index.html` のお問い合わせフォームは [Formspree](https://formspree.io) 経由でメール送信されます（接続済み）。フォームから送信された内容は、Formspree に登録したメールアドレスに届きます。送信先の変更や受信履歴の確認は Formspree の管理画面から行えます。
