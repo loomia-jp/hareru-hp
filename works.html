@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Works &mdash; はれるの手しごと｜はれる Haleru.</title>
+<title>Works &mdash; はれるの手しごと｜はれる Hareru.</title>
 <meta name="description" content="就労継続支援B型事業所はれるの利用者が手がけた品々。パラコード手芸・コーヒー・畳こもの・紙もの・屋上農園の収穫を、カテゴリごとにご紹介します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --apricot:#f2c9a2;
@@ -30,7 +30,7 @@
     --font-serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho","YuMincho","游明朝",serif;
     --font-sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic","YuGothic","游ゴシック",sans-serif;
     --font-display:"Cormorant Garamond",Georgia,serif;
-    --font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+    --font-mono:"DM Mono","Courier New",monospace;
     --ease:cubic-bezier(.22,.61,.36,1);
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -134,54 +134,72 @@
 
   /* ============ WORKS ============ */
   .works{background:var(--cream)}
-  .work-cat{margin-top:84px}
+  .work-cat{margin-top:96px}
   .work-cat:first-of-type{margin-top:0}
-  .work-cat-head{margin-bottom:26px}
+  .work-cat-head{
+    margin-bottom:34px;padding-bottom:20px;
+    border-bottom:1px solid var(--line);
+  }
   .work-cat-title{
     font-family:var(--font-serif);font-weight:600;
-    font-size:clamp(22px,3.1vw,32px);line-height:1.4;color:var(--indigo-ink);
-    display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+    font-size:clamp(23px,3.1vw,33px);line-height:1.4;color:var(--indigo-ink);
   }
-  .work-cat-title::before{content:"";width:30px;height:2px;background:var(--apricot-deep);align-self:center}
+  .work-cat-title .emoji{margin-right:.4em;font-style:normal}
   .work-cat-title .en{
     font-family:var(--font-display);font-style:italic;font-weight:400;
-    font-size:.56em;color:var(--apricot-deep);letter-spacing:.04em;
+    font-size:.5em;color:var(--apricot-deep);letter-spacing:.05em;margin-left:.55em;
   }
-  .work-cat-desc{font-size:14px;color:var(--ink-soft);line-height:1.95;margin-top:10px;max-width:600px}
-  .works-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  @media (max-width:900px){.works-grid{grid-template-columns:repeat(3,1fr);gap:12px}}
-  @media (max-width:520px){.works-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+  .work-cat-desc{
+    font-size:14px;color:var(--ink-soft);line-height:1.95;
+    margin-top:12px;max-width:620px;
+  }
+  .work-cat-desc a{color:var(--apricot-deep);text-decoration:underline;text-underline-offset:2px}
+  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  @media (max-width:900px){.works-grid{grid-template-columns:repeat(2,1fr);gap:20px}}
+  @media (max-width:520px){.works-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
   .work-item{
-    background:var(--paper);border:1px solid var(--line);
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;
     overflow:hidden;display:flex;flex-direction:column;
-    transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease);
+    transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);
   }
   .work-item:hover{
-    transform:translateY(-4px);
-    box-shadow:0 18px 40px -20px rgba(31,58,95,.18);
-    border-color:rgba(214,139,94,.35);
+    transform:translateY(-6px);
+    box-shadow:0 22px 44px -22px rgba(31,58,95,.3);
+    border-color:rgba(214,139,94,.4);
   }
   .work-item-vis{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--cream-deep)}
   .work-item-vis img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
-  .work-item:hover .work-item-vis img{transform:scale(1.04)}
+  .work-item:hover .work-item-vis img{transform:scale(1.05)}
   .work-item-cap{
-    padding:13px 14px 16px;text-align:center;
-    font-family:var(--font-serif);font-size:13.5px;font-weight:600;
-    color:var(--indigo-ink);line-height:1.55;
+    flex:1;padding:15px 14px 18px;
+    display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;
+  }
+  .work-item-cat{
+    font-family:var(--font-sans);font-size:11px;font-weight:500;letter-spacing:.04em;
+    color:var(--apricot-deep);
+    padding:3px 11px;border-radius:999px;
+    background:rgba(242,201,162,.22);border:1px solid rgba(214,139,94,.25);
+  }
+  .work-item-name{
+    font-family:var(--font-serif);font-size:15px;font-weight:600;
+    color:var(--indigo-ink);line-height:1.5;
   }
   .works-note{
-    margin-top:72px;padding:32px 36px;background:var(--paper);
-    border:1px solid var(--line);
+    margin-top:84px;padding:32px 36px;background:var(--paper);
+    border:1px solid var(--line);border-radius:14px;
     display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
   }
   .works-note p{font-size:14px;color:var(--ink-soft);line-height:1.85;max-width:560px;margin:0}
   .works-note p strong{color:var(--ink);font-weight:600}
   @media (max-width:720px){
-    .work-cat{margin-top:56px}
-    .works-note{padding:24px;flex-direction:column;align-items:flex-start;margin-top:48px}
+    .work-cat{margin-top:64px}
+    .work-cat-head{margin-bottom:26px;padding-bottom:16px}
+    .works-note{padding:24px;flex-direction:column;align-items:flex-start;margin-top:56px}
   }
   @media (max-width:520px){
-    .work-item-cap{font-size:12px;padding:10px 8px 13px}
+    .work-item-cap{padding:12px 10px 15px;gap:6px}
+    .work-item-name{font-size:13.5px}
+    .work-item-cat{font-size:10px;padding:2px 9px}
   }
 
   /* ============ FOOTER ============ */
@@ -221,7 +239,7 @@
 <nav class="nav">
   <a class="logo" href="index.html">
     <span class="mark">はれる</span>
-    <span class="sub">Haleru.</span>
+    <span class="sub">Hareru.</span>
   </a>
   <a class="nav-back" href="index.html"><span class="arrow">&larr;</span> トップへ戻る</a>
 </nav>
@@ -246,37 +264,58 @@
     <!-- パラコード -->
     <div class="work-cat fade-up">
       <div class="work-cat-head">
-        <h2 class="work-cat-title">パラコード <span class="en">Paracord</span></h2>
+        <h2 class="work-cat-title"><span class="emoji" aria-hidden="true">🪢</span>パラコード<span class="en">Paracord</span></h2>
         <p class="work-cat-desc">色とりどりのパラコードを一本ずつ編んで仕上げる、キーホルダーやストラップ。同じ模様でも、結ぶ手が違えば、ひとつとして同じものはありません。</p>
       </div>
       <div class="works-grid">
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w11.jpg" alt="パラコードのキーホルダー" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">キーホルダー</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">パラコード</span>
+            <span class="work-item-name">キーホルダー</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w01.jpg" alt="パラコードのハンドストラップ" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">ハンドストラップ</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">パラコード</span>
+            <span class="work-item-name">ハンドストラップ</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w02.jpg" alt="ツイスト編みのパラコードストラップ" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">ツイスト編みストラップ</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">パラコード</span>
+            <span class="work-item-name">ツイスト編みストラップ</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w03.jpg" alt="アースカラーのパラコードストラップ" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">ストラップ（アースカラー）</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">パラコード</span>
+            <span class="work-item-name">ストラップ（アースカラー）</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w04.jpg" alt="パラコードのストラップとノットボール" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">ストラップ＆ノットボール</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">パラコード</span>
+            <span class="work-item-name">ストラップ＆ノットボール</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w13.jpg" alt="パラコードのゴルフティーホルダー" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">ゴルフティーホルダー</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">パラコード</span>
+            <span class="work-item-name">ゴルフティーホルダー</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w12.jpg" alt="店頭に並ぶパラコード商品" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">パラコード商品いろいろ</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">パラコード</span>
+            <span class="work-item-name">パラコード商品いろいろ</span>
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -284,17 +323,23 @@
     <!-- コーヒー -->
     <div class="work-cat fade-up">
       <div class="work-cat-head">
-        <h2 class="work-cat-title">コーヒー <span class="en">Coffee</span></h2>
+        <h2 class="work-cat-title"><span class="emoji" aria-hidden="true">☕</span>コーヒー<span class="en">Coffee</span></h2>
         <p class="work-cat-desc">ひとつずつ手づめした、はれるオリジナルのドリップコーヒー。やさしい一杯をお届けします。</p>
       </div>
       <div class="works-grid">
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w05.jpg" alt="はれるオリジナルのドリップコーヒー各種" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">ドリップコーヒー</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">コーヒー</span>
+            <span class="work-item-name">ドリップコーヒー</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w16.jpg" alt="カップにセットしたドリップバッグコーヒー" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">ドリップバッグ</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">コーヒー</span>
+            <span class="work-item-name">ドリップバッグ</span>
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -302,25 +347,37 @@
     <!-- 畳こもの -->
     <div class="work-cat fade-up">
       <div class="work-cat-head">
-        <h2 class="work-cat-title">畳こもの <span class="en">Tatami Goods</span></h2>
+        <h2 class="work-cat-title"><span class="emoji" aria-hidden="true">🟩</span>畳こもの<span class="en">Tatami Goods</span></h2>
         <p class="work-cat-desc">畳の縁や素材を活かしてつくる、コースターやマットなどの小物たち。</p>
       </div>
       <div class="works-grid">
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w08.jpg" alt="麻の葉柄の縁の五角畳マット" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">五角畳マット</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">畳こもの</span>
+            <span class="work-item-name">五角畳マット A</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w09.jpg" alt="麻の葉柄の縁の五角畳マット" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">五角畳マット</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">畳こもの</span>
+            <span class="work-item-name">五角畳マット B</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w10.jpg" alt="市松模様の畳コースター" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">畳コースター（市松）</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">畳こもの</span>
+            <span class="work-item-name">畳コースター（市松）</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w06.jpg" alt="ねこの置物がのった畳マット" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">畳マット（ねこ付き）</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">畳こもの</span>
+            <span class="work-item-name">畳マット（ねこ付き）</span>
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -328,13 +385,16 @@
     <!-- 紙もの -->
     <div class="work-cat fade-up">
       <div class="work-cat-head">
-        <h2 class="work-cat-title">紙もの <span class="en">Paper Goods</span></h2>
+        <h2 class="work-cat-title"><span class="emoji" aria-hidden="true">📄</span>紙もの<span class="en">Paper Goods</span></h2>
         <p class="work-cat-desc">ひとつずつ手作業で仕上げる、ぽち袋やメッセージカード。</p>
       </div>
       <div class="works-grid">
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w07.jpg" alt="ぽち袋とメッセージカード" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">ぽち袋＆メッセージカード</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">紙もの</span>
+            <span class="work-item-name">ぽち袋＆メッセージカード</span>
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -342,31 +402,43 @@
     <!-- 農園の収穫 -->
     <div class="work-cat fade-up">
       <div class="work-cat-head">
-        <h2 class="work-cat-title">農園の収穫 <span class="en">Harvest</span></h2>
+        <h2 class="work-cat-title"><span class="emoji" aria-hidden="true">🌿</span>農園の収穫<span class="en">Harvest</span></h2>
         <p class="work-cat-desc">屋上の「はれるファーム」で、土づくりから水やり、収穫まで。メンバーが育てた野菜たちです。畑での作業のようすは<a href="scenes.html">作業風景</a>のページでご覧いただけます。</p>
       </div>
       <div class="works-grid">
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w14.jpg" alt="収穫したラディッシュ" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">ラディッシュ</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">農園の収穫</span>
+            <span class="work-item-name">ラディッシュ</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w15.jpg" alt="袋詰めしたサラダ菜" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">サラダ菜</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">農園の収穫</span>
+            <span class="work-item-name">サラダ菜</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w18.jpg" alt="収穫したじゃがいも" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">じゃがいも</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">農園の収穫</span>
+            <span class="work-item-name">じゃがいも A</span>
+          </figcaption>
         </figure>
         <figure class="work-item">
           <div class="work-item-vis"><img src="assets/works/w17.jpg" alt="収穫したじゃがいも" loading="lazy" decoding="async"></div>
-          <figcaption class="work-item-cap">じゃがいも</figcaption>
+          <figcaption class="work-item-cap">
+            <span class="work-item-cat">農園の収穫</span>
+            <span class="work-item-name">じゃがいも B</span>
+          </figcaption>
         </figure>
       </div>
     </div>
 
     <div class="works-note fade-up">
-      <p>気になる品がありましたら、お気軽にお問い合わせください。パラコード作品は、色や編み方の<strong>オーダーメイド</strong>も承ります。<br>店頭でお手にとってご覧いただけます（事前のご連絡をおすすめします）。</p>
+      <p>気になる品がありましたら、お気軽にお問い合わせください。パラコード商品は、色や編み方の<strong>オーダーメイド</strong>も承ります。<br>店頭でお手にとってご覧いただけます（事前のご連絡をおすすめします）。</p>
       <a href="index.html#contact" class="btn btn-primary">お問い合わせ&nbsp;&rarr;</a>
     </div>
   </div>
@@ -378,7 +450,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="mark">はれる</div>
-        <div class="tagline">Haleru. &mdash; after the rain</div>
+        <div class="tagline">Hareru. &mdash; after the rain</div>
         <div class="footer-corp">
           <dl>
             <dt>法人</dt><dd>合同会社にじ</dd>
@@ -406,7 +478,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 合同会社にじ &mdash; Haleru.</span>
+      <span>&copy; 2026 合同会社にじ &mdash; Hareru.</span>
       <span>Crafted with care, knot by knot.</span>
     </div>
   </div>
